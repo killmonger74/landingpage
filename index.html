@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Landing Page</title>
+	<style type="text/css">
+		*
+		{
+			padding:0;
+			margin:0;
+			list-style: none;
+			--text:#797979;
+			--blue:#04315b;
+			--icons:#808080;
+		
+		}
+		body
+		{
+			margin:0;
+			padding:0;
+			width:98vw;
+			min-height:100vh;
+			font-family: Roboto;
+			box-sizing: border-box;
+		}
+		header
+		{
+			background: var(--primary);
+			display: flex;
+			align-items: center;
+			width: ;
+			justify-content: space-between;
+			padding:0 5rem;
+			height:4.5rem;
+			box-sizing: border-box;
+			color: var(--text);
+			overflow-x: hidden;
+		}
+		header .pagename
+		{
+			flex:2;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			color: #111;
+			text-decoration: none;
+		}
+		header .pagename h2,header .pagename h2 a
+		{
+			color: inherit;
+			text-decoration: none;
+			display: block;
+			font-weight: 600;
+			font-size: 1.75rem;
+		}
+		header .navigation
+		{
+			flex:6;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+
+		}
+		header .navigation ul
+		{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+		header .navigation ul li
+		{
+			
+			margin:0 .5rem;
+			height: 100%;
+			box-sizing: border-box;
+			line-height:4.5rem;
+			color:#111;
+			font-weight:600;
+
+		}
+		header .navigation ul li a
+		{
+			color: inherit;
+			text-decoration: none;
+			display: block;
+			padding:0 .75rem;
+			height: 100%;
+			position: relative;
+			
+		}
+		header .navigation ul li a::after
+		{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width:0%;
+			content: "";
+			padding:.1rem;
+			transform-origin: left;
+			transition: .2s width;
+		}
+		
+		
+		header .search
+		{
+			box-sizing: border-box;
+			flex:2;
+			height: 100%;
+			display: flex;
+			justify-content: flex-end;
+			align-content: center;
+			align-items: center;
+			box-sizing: border-box;
+
+		}
+		header .search .cont
+		{
+			box-shadow:0 0 2px #ededed;
+			border-radius:25px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: .25rem .25rem;
+			box-sizing: border-box;
+			width:12rem;
+			height:2rem;
+			background:#ededed;
+			box-sizing: border-box;
+			position: relative;
+		}
+		header .search .cont svg
+		{
+			position: absolute;
+			top:50%;
+			left:10%;
+			transform: translate(-50%,-50%);
+			color: #797979;
+			width:20px;
+			height:20px;
+		}
+		header .search .cont input
+		{
+			outline: none;
+			border:transparent;
+			margin: 0 .5rem;
+			color:#111;
+			background: transparent;
+			position: relative;
+			left:7%;
+			color:#797979;
+		}
+		
+		
+		.Container
+		{
+			width:calc(100%);
+			min-height:calc(100vh - 4.5rem);
+			box-sizing: border-box;
+			padding:0 5rem;
+			background: #fff;
+		}
+		.Container .Section-first
+		{
+			min-height:calc(100vh - 4.5rem);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			box-sizing: border-box;
+		}
+		.Into
+		{
+			margin-top:3rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			box-sizing: border-box;
+		}
+		.Into h1 
+		{
+			font-size: 2.5rem;
+			margin-bottom:.5rem;
+			line-height:2.5rem;
+			font-family: serif;
+			letter-spacing: 1px;
+			text-align: center;
+			padding:.5rem
+		}
+		.Into p
+		{
+			width:35ch;
+			color:#797979;
+			text-align: center;
+			letter-spacing: 1px;
+			padding:.5rem
+		}
+		.Into button
+		{
+			margin-top:1rem;
+			width:8rem;
+			padding:.75rem .5rem;
+			background:var(--blue);
+			border: none;
+			color: #fff;
+			border-radius:4px;
+			font-weight:500;
+			letter-spacing: 1px;
+			cursor: pointer;
+		}
+
+		.firstone
+		{
+			flex:2;
+			height:70vh;
+
+		}
+		.secondone 
+		{
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			height:55vh;
+			}
+
+		
+		.Front_card
+		{
+			width:100%;
+			background: dodgerblue;
+			height: 100%;
+			border-radius:10px;
+			background-image:url('./assets/images.jpg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		.parent
+		{
+			height:55vh;
+		}
+		.secondcard
+		{
+			height:70%;
+			background: #fff;
+			width:120%;
+			border-radius:25px;
+			transform: translate(-18%,-8%);
+			box-shadow: 0 0 10px #aaa;
+			box-sizing: border-box;
+			padding: 2rem 3rem;
+		}
+		.secondcard h3
+		{
+			color: var(--blue);
+			text-transform: uppercase;
+			font-size: 1rem;
+			font-weight:600;
+			margin-bottom:.25rem;
+		}
+		.secondcard h2 
+		{
+			width:15ch;
+			padding:.25rem 0;
+			margin-bottom:.5rem;
+			font-size:1.8rem;
+		}
+		.secondcard p
+		{
+			box-sizing: border-box;
+			color: var(--text);
+			width: 35ch;
+		}
+		.socail-icons
+		{
+			width:70%;
+			height:3rem;
+			margin-left:2rem;
+			transform: translateY(1rem);
+			border-radius:10px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.socail-icons svg
+		{
+			color:var(--text);
+			padding:0 1rem;
+			cursor: pointer;
+
+		}
+		.mobilemenu
+		{
+			display:block;
+
+
+		}
+
+		.Section-Second
+		{
+			box-sizing: border-box;
+			background: var(--blue);
+			padding:2rem 0;
+			margin-bottom:5rem;
+			border-radius: 10px;
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.Section-Second .heading
+		{
+			font-size: 1.8rem;
+			margin:1rem 0 1rem;
+		}
+		.writer-info img
+		{
+			width:70px;
+			height:70px;
+			border-radius: 50%;
+		}
+		.Information 
+		{
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(4,1fr);
+			grid-template-rows: repeat(2,1fr);
+		}
+		.writer-info
+		{
+			position: relative;
+			margin:1rem 0 2rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.writer-info h5
+		{
+
+			text-align: center;
+			margin-top:.5rem;
+			letter-spacing: 1px;
+		}
+		.mobile
+		{
+			color:#000;padding:0rem;display: none;
+		}
+		@media only screen and (max-width:800px)
+		{
+
+			header
+			{
+				padding:0 1rem;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			.pagename h2
+			{
+				width: 100%;
+				text-align: center;
+			}
+			.mobile
+			{
+				display: block;
+				cursor: pointer;
+				flex: 2;
+			}
+			
+			.navigation
+			{
+				display: none !important;
+				position: absolute;
+				top:3rem;
+				width:40vw;
+				z-index: 2000;
+				background:var(--blue);
+				left:0;
+				height: 30vh !important;
+				box-shadow: 0 0 5px #aaa;
+				color: #fff;
+				transition: .2s all;
+
+			}
+			.mobilemenu
+			{
+				transition: .2s all;
+				display: flex !important; 
+			}
+			header .navigation ul
+			{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content:center;
+				align-items: flex-start;
+
+				box-sizing: border-box;
+			}	
+			header .navigation ul li
+			{
+				margin:unset;
+				height:2rem !important;
+				padding:unset;
+				text-align: center;
+				width:100%;
+				line-height:2rem;
+				color:#fff;
+			}
+			header .navigation ul li:hover
+			{
+				background: #fff;
+				color:var(--blue)
+			}
+			.pagename
+			{
+				flex: 6;
+			}
+			.search .cont
+			{
+				widows:100%;
+				background: #fff !important;
+				box-shadow: unset !important;
+				box-sizing: border-box;
+				width:unset !important;
+			}
+			.search .cont svg
+			{
+				align-self: flex-end;
+			}
+			.search .cont input
+			{
+				display: none;
+			}
+			.search .cont .pinput
+			{
+				position: fixed;
+				width: 7rem;
+				display: block;
+				left: calc(100vw - 10.5rem);
+				border: 1px solid;
+				border-radius:25px;
+				padding:.25rem;
+				box-sizing: border-box;
+				font-size: .75rem;
+				background: #cdcdcd;
+				color: var(--text)
+				
+			}
+			.Container
+			{
+				padding:0 1rem;
+			}
+			.Into
+			{
+				margin-top:1rem;
+			}
+			.Into h1
+			{
+				width:80%;
+			}
+			.Section-first
+			{
+				margin-top: 2rem;
+				flex-direction: column;
+			}
+			.firstone
+			{
+				width: 100%;
+			}
+			.Front_card
+			{
+				height:50vh;
+			}
+			.parent
+			{
+				position: relative;
+			}
+			.secondcard
+			{
+
+				min-width: 100%;
+				transform: translate(0);
+				transform: translate(-10%,-20%);
+				min-height: 30vh;
+				padding:2rem 1rem;
+			}
+			.Section-Second
+			{
+				margin-bottom:1rem;
+			}
+
+			.secondcard p
+			{
+				font-size: .75rem
+			}
+				.socail-icons {
+					transform: translate(-1rem);
+				}
+				.Information 
+			{
+				grid-template-columns: repeat(2,1fr);
+			
+			}
+		}
+		@media only screen and (min-width:1600px)
+		{
+			body
+			{
+				padding:0 20vw;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<div class="mobile">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+		</div>
+		<div class="pagename">
+			<h2><a href="#">BookPod<span style="color:var(--blue)">.</span></a></h2>
+		</div>
+		<nav class="navigation">
+			<ul >
+				<li class="active"><a href='#'>Home</a></li>
+				<li><a href="#">Categories</a></li>
+				<li><a href="#">Podcasts</a></li>
+			</ul>
+		</nav>
+		<div class="search">
+			<div class="cont">
+				<svg  class='searc1'style='cursor: pointer;'xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+				<input id='ss'  type="text" name='Search' placeholder="Search...">
+			</div>
+		</div>
+	</header>
+	<div class="Container">
+		<div class="Into">
+			<h1 style="">Home of <span style="color: var(--blue)">100,000+ </span><br>books and podcasts</h1>
+			<p>Get the latest books and listen to the lastest podcasts all in one place</p>
+			<button>Get Started</button>
+		</div>
+
+		<div class="Section-first">
+			<div class="firstone">
+				<div class="Front_card">
+				</div>
+			</div>
+			<div class="secondone">
+				<div class="parent">
+					<div class="secondcard">
+						<h3>Lorem Ipsum</h3>
+						<h2>Lorem Ipsum dolor sit amet</h2>
+						<p>Lorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolor sit ametLorem Ipsum dolorLoremm </p>
+					</div>
+					<div class="socail-icons">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#cdcdcd" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#cdcdcd" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="Section-Second">
+				<h3 class="heading">Featured Writers</h3>
+				<div class="Information">
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					<div class="writer-info">
+						<img alt='writer-image' src='./assets/images.jpg'>
+						<h5>writername</h5>
+					</div>
+					
+			</div>
+		</div>
+	
+
+	</div>
+	<script type="text/javascript">
+		let p=document.getElementsByClassName('mobile')[0];
+		let p1=document.getElementsByClassName('navigation')[0];
+		
+		window.addEventListener('load',()=>{
+			let p=document.getElementsByClassName('mobile')[0];
+			let p1=document.getElementsByClassName('navigation')[0];
+			let se=document.getElementsByClassName('searc1')[0];
+			let ss=document.getElementById('ss');
+
+
+
+			window.addEventListener('scroll',()=>{
+				if(ss.classList.contains('pinput'))
+				{
+					ss.classList.remove('pinput')
+				}
+			})
+			se.addEventListener('click',(e)=>{
+				if(e.target)
+				ss.classList.toggle('pinput')
+			})
+			p.addEventListener('click',()=>{
+				console.log(p1)
+				if(p1.classList.contains('mobilemenu'))
+				{
+
+					p1.classList.remove('mobilemenu')
+				}
+				else
+				{
+					p1.classList.add('mobilemenu');
+				}
+			})
+		})
+
+	</script>
+</body>
+</html>
